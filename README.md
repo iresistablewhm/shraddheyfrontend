@@ -77,15 +77,15 @@ src/
 
 ### Prerequisites
 - Node.js 16+ and npm/yarn
-- Backend services running (see [backend repository](https://github.com/Vivek8968/hyperlocalbymanus))
-- Firebase project (for authentication)
+- **Backend services running** (see [backend repository](https://github.com/Vivek8968/hyperlocalbymanus))
+- Firebase project (for authentication - optional for development)
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd hyperlocal-frontend
+   git clone https://github.com/Vivek8968/shraddheyfrontend.git
+   cd shraddheyfrontend
    ```
 
 2. **Install dependencies**
@@ -93,18 +93,42 @@ src/
    npm install
    ```
 
-3. **Environment setup**
+3. **Backend Setup (Required First)**
    ```bash
-   cp .env.example .env.development
-   # Edit .env.development with your configuration
+   # Clone and set up the backend services
+   git clone https://github.com/Vivek8968/hyperlocalbymanus.git
+   cd hyperlocalbymanus
+   
+   # Install Python dependencies
+   pip install -r requirements.txt
+   
+   # Start all backend services (ports 8001-8005)
+   python run_service.py user_service &
+   python run_service.py seller_service &
+   python run_service.py customer_service &
+   python run_service.py catalog_service &
+   python run_service.py admin_service &
    ```
 
-4. **Start development server**
+4. **Environment Configuration**
    ```bash
+   # The .env file is already configured for local development
+   # Backend services should be running on localhost:8001-8005
+   # See ENVIRONMENT_SETUP.md for detailed configuration
+   ```
+
+5. **Start development server**
+   ```bash
+   cd shraddheyfrontend
    npm start
    ```
 
-The application will be available at `http://localhost:3000`.
+6. **Access the application**
+   - Frontend: http://localhost:12000
+   - Backend Health Check: http://localhost:8001/health
+
+### 🔧 Environment Setup
+For detailed environment configuration, backend connection setup, and troubleshooting, see [ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md).
 
 ### Environment Variables
 
