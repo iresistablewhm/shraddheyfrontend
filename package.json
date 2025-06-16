@@ -36,7 +36,10 @@
     "start": "BROWSER=none HOST=0.0.0.0 PORT=12000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-connection": "node test-connection.js",
+    "dev": "npm run test-connection && npm start",
+    "setup": "npm install && npm run test-connection"
   },
   "eslintConfig": {
     "extends": [
